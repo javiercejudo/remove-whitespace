@@ -1,10 +1,8 @@
-/*eslint no-unused-expressions: 0*/
-
 /**
  * Module dependencies
  */
 
-var remove = require('./index');
+var fn = require('./index');
 
 /**
  * Test
@@ -12,12 +10,12 @@ var remove = require('./index');
 
 describe('whitespace-remove', function() {
   it('should assert argument types', function() {
-    remove.bind(remove, 123)
+    fn.bind(undefined, 123)
       .should.throw('whitespace-remove: val should be a string');
   });
 
   it('should strip all whitespace from the string', function() {
-    var val = 'foo \n bar \r \n bla bla bla bla';
-    remove(val).should.eql('foo\nbar\r\nblablablabla');
+    fn('foo \n bar \r \n bla bla bla bla')
+      .should.eql('foo\nbar\r\nblablablabla');
   });
 });
