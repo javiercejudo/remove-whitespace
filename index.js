@@ -2,7 +2,12 @@
  * Module dependencies
  */
 
-var assert = require('assert');
+var assert = require('assert-error');
+var isString = require('lodash.isstring');
+
+var STRING_ERROR_TEXT = 'whitespace-remove: val should be a string';
+var EMPTY_STRING = '';
+var REMOVE_WHITESPACE_REGEX = /( )/gm;
 
 /**
  * Strip all newlines from the given value
@@ -12,7 +17,7 @@ var assert = require('assert');
  * @api public
  */
 
-module.exports = function removeNewlines(val) {
-  assert.equal(typeof val, 'string', 'whitespace-remove: val should be a string');
-  return val.replace(/( )/gm, '');
-}
+module.exports = function removeWhitespace(val) {
+  assert(isString(val), new TypeError(STRING_ERROR_TEXT));
+  return val.replace(REMOVE_WHITESPACE_REGEX, EMPTY_STRING);
+};

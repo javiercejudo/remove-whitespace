@@ -15,7 +15,10 @@
     "string"
   ],
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "assert-error": "^1.0.3",
+    "lodash.isstring": "^3.0.1"
+  },
   "devDependencies": {
     "istanbul": "^0.3.2",
     "make-lint": "^1.0.1",
