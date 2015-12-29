@@ -11,7 +11,7 @@ var fn = require('./index');
 describe('whitespace-remove', function() {
   it('should assert argument types', function() {
     fn.bind(undefined, 123)
-      .should.throw('whitespace-remove: val should be a string');
+      .should.throw(TypeError);
   });
 
   it('should strip all whitespace from the string', function() {

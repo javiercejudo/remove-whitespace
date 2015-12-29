@@ -5,7 +5,7 @@
 var assert = require('assert-error');
 var isString = require('lodash.isstring');
 
-var STRING_ERROR_TEXT = 'whitespace-remove: val should be a string';
+var STRING_ERROR_TEXT = 'remove-whitespace: expected a string';
 var EMPTY_STRING = '';
 var REMOVE_WHITESPACE_REGEX = /( )/gm;
 
